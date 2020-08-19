@@ -1,11 +1,12 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css');
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
+
 *{
-	margin:0;
-	padding:0;
+	margin: 0;
+	padding: 0;
 	list-style-type: none;
-	box-sizing:border-box;
+	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -40,7 +41,7 @@ h2, h3 {
 
 .app{
 	max-width: 30em;
-	margin:auto;
+	margin: auto;
 	position: relative;
 }
 
@@ -51,13 +52,12 @@ h2, h3 {
 
 .view{
 	display: flex;
-	flex-direction:column;
-
+	flex-direction: column;
 }
 
 .header{
 	text-align: right;
-	padding:1em;
+	padding: 1em;
 
 	i {
 		border-radius: 50%;
@@ -69,6 +69,12 @@ h2, h3 {
 		background-color: rgba(0,0,0,0.4);
 		box-shadow: 0 0.2em 0.2em rgba(0,0,0,0.1);
 		color: #fff;
+		transition: ease 0.3s transform;
+
+		&:hover {
+			transform: translateY(-0.2em);
+			cursor: pointer;
+		}
 	}
 }
 
@@ -77,14 +83,20 @@ h2, h3 {
 	padding: 0 1em 1em 1em;
 }
 
-
 .menu a{
 	display: block;
 	text-align: center;
-	padding:1em;
+	padding: 1em;
 	border-bottom: 0.1em rgba(0,0,0,0.1) solid;
-	color:black;
+	color: black;
 	text-transform: capitalize;
+	transition: ease 0.3s all;
+
+	&:hover {
+		text-decoration: none;
+		background-color: rgba(0,0,0,0.03);
+		border-color: transparent;
+	}
 }
 
 .project{
@@ -101,6 +113,12 @@ h2, h3 {
 	  border-radius: 50%;
 	  text-align: center;
 	  box-shadow: 0 0.2em 0.2em rgba(0,0,0,0.1);
+	  transition: ease 0.3s transform;
+
+	  &:hover {
+		  transform: translateY(-0.2em);
+		  cursor: pointer;
+	  }
 	}
 
 	p:not(.card-text) {
@@ -123,13 +141,22 @@ h2, h3 {
 }
 
 .btn {
+	transition: ease 0.3s transform;
+
 	&:focus {
 		box-shadow: none;
+	}
+	
+	&:hover {
+		transform: translateY(-0.2em);
+		color: #fff;
+		cursor: pointer;
 	}
 }
 
 form {
 	.form-group {
+
 		input, select {
 			background-color: transparent;
 			border: none;

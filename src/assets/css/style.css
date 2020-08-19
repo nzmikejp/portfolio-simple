@@ -73,6 +73,14 @@ h2:after, h3:after {
   -webkit-box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.1);
           box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.1);
   color: #fff;
+  -webkit-transition: ease 0.3s transform;
+  transition: ease 0.3s transform;
+}
+
+.header i:hover {
+  -webkit-transform: translateY(-0.2em);
+          transform: translateY(-0.2em);
+  cursor: pointer;
 }
 
 .main {
@@ -89,6 +97,14 @@ h2:after, h3:after {
   border-bottom: 0.1em rgba(0, 0, 0, 0.1) solid;
   color: black;
   text-transform: capitalize;
+  -webkit-transition: ease 0.3s all;
+  transition: ease 0.3s all;
+}
+
+.menu a:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-color: transparent;
 }
 
 .project {
@@ -108,6 +124,14 @@ h2:after, h3:after {
   text-align: center;
   -webkit-box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.1);
           box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.1);
+  -webkit-transition: ease 0.3s transform;
+  transition: ease 0.3s transform;
+}
+
+.project i:hover {
+  -webkit-transform: translateY(-0.2em);
+          transform: translateY(-0.2em);
+  cursor: pointer;
 }
 
 .project p:not(.card-text) {
@@ -130,9 +154,21 @@ h2:after, h3:after {
   color: #fff;
 }
 
+.btn {
+  -webkit-transition: ease 0.3s transform;
+  transition: ease 0.3s transform;
+}
+
 .btn:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.btn:hover {
+  -webkit-transform: translateY(-0.2em);
+          transform: translateY(-0.2em);
+  color: #fff;
+  cursor: pointer;
 }
 
 form .form-group input, form .form-group select {

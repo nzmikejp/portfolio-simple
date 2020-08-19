@@ -37,31 +37,6 @@ class App extends Component {
     })
   }
 
-  addProject = (data) => {
-    var newProject = {
-      id: Date.now(),
-      ...data
-    }
-
-    var newProjectList = [newProject, ...this.state.projects]
-
-    this.setState({
-      projects: newProjectList
-    })
-  }
-
-  removeProject = (id) => {
-    var projects = this.state.projects
-    var filtered = projects.filter((item) => {
-      return item.id !== id
-    })
-
-    this.setState({
-      projects: filtered
-    })
-  }
-
-
   render() {
 
     return (
@@ -79,7 +54,6 @@ class App extends Component {
                   var props = {
                     key: project.id,
                     setActiveView: this.setActiveView,
-                    removeProject: this.removeProject,
                     ...project
                   }
 
@@ -95,7 +69,7 @@ class App extends Component {
           <div className="header"><i className="fas fa-times" onClick={()=>this.setActiveView('home')}></i></div>
           <div className="main">
             <h3><span>Add</span> Projects</h3>
-            <AddProject addProject={this.addProject} setActiveView={this.setActiveView}/>
+            <AddProject />
           </div>
         </View>
 

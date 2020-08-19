@@ -18,7 +18,7 @@ class AddProject extends Component {
             description:formData.get('description-input'),
             type_id: parseInt(formData.get('type-input'))
         }
-        
+
         var {addProject, setActiveView} = this.props
 
         addProject(data)
@@ -29,21 +29,21 @@ class AddProject extends Component {
         return(
             <form onSubmit={this.handleFormSubmit} ref={(el) => {this.form = el}}>
               <div className="form-group">
-                <label htmlFor="name-input">Name</label>
+                <label htmlFor="name-input">Name:</label>
                 <input type="text" className="form-control" name="name-input" id="name-input" placeholder="Enter project name"/>
               </div>
               <div className="form-group">
-                <label htmlFor="name-input">Description</label>
+                <label htmlFor="name-input">Description:</label>
                 <input type="text" className="form-control" name="description-input" id="description-input" placeholder="Enter project description"/>
               </div>
 
               <div className="form-group">
-                <label htmlFor="name-input">Photo</label>
+                <label htmlFor="name-input">Photo:</label>
                 <input type="text" className="form-control" name="photo-input" id="photo-input" value="project.jpg" />
               </div>
 
               <div className="form-group">
-                <label htmlFor="type-input">Type</label>
+                <label htmlFor="type-input">Type:</label>
 
                 <select className="form-control" name="type-input" id="type-input">
                   <option value="1">Painting</option>

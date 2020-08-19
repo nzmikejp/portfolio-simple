@@ -87,7 +87,7 @@ class App extends Component {
               <i className="fas fa-bars" onClick={() => this.setActiveView('nav')}></i>
             </div>
             <div className="main">
-              <h3>Projects</h3>
+              <h3><span>Our</span> Projects</h3>
               {
                 this.state.projects.map((project) => {
                   var props = {

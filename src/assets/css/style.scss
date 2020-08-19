@@ -67,11 +67,11 @@ h2, h3 {
 		text-align: center;
 		line-height: 2.5;
 		background-color: rgba(0,0,0,0.4);
-		box-shadow: 0 0.2em 0.2em rgba(0,0,0,0.1);
 		color: #fff;
-		transition: ease 0.3s transform;
-
+		transition: ease 0.3s all;
+		
 		&:hover {
+			box-shadow: 0 0.3em 0.25em rgba(0,0,0,0.1);
 			transform: translateY(-0.2em);
 			cursor: pointer;
 		}
@@ -112,12 +112,12 @@ h2, h3 {
 	  line-height: 2.2;
 	  border-radius: 50%;
 	  text-align: center;
-	  box-shadow: 0 0.2em 0.2em rgba(0,0,0,0.1);
-	  transition: ease 0.3s transform;
-
+	  transition: ease 0.3s all;
+	  
 	  &:hover {
-		  transform: translateY(-0.2em);
-		  cursor: pointer;
+			box-shadow: 0 0.3em 0.2em rgba(0,0,0,0.1);
+			transform: translateY(-0.2em);
+			cursor: pointer;
 	  }
 	}
 

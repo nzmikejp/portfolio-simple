@@ -70,14 +70,14 @@ h2:after, h3:after {
   text-align: center;
   line-height: 2.5;
   background-color: rgba(0, 0, 0, 0.4);
-  -webkit-box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.1);
   color: #fff;
-  -webkit-transition: ease 0.3s transform;
-  transition: ease 0.3s transform;
+  -webkit-transition: ease 0.3s all;
+  transition: ease 0.3s all;
 }
 
 .header i:hover {
+  -webkit-box-shadow: 0 0.3em 0.25em rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.3em 0.25em rgba(0, 0, 0, 0.1);
   -webkit-transform: translateY(-0.2em);
           transform: translateY(-0.2em);
   cursor: pointer;
@@ -122,13 +122,13 @@ h2:after, h3:after {
   line-height: 2.2;
   border-radius: 50%;
   text-align: center;
-  -webkit-box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.1);
-  -webkit-transition: ease 0.3s transform;
-  transition: ease 0.3s transform;
+  -webkit-transition: ease 0.3s all;
+  transition: ease 0.3s all;
 }
 
 .project i:hover {
+  -webkit-box-shadow: 0 0.3em 0.2em rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.3em 0.2em rgba(0, 0, 0, 0.1);
   -webkit-transform: translateY(-0.2em);
           transform: translateY(-0.2em);
   cursor: pointer;

@@ -6,13 +6,38 @@
 	padding:0;
 	list-style-type: none;
 	box-sizing:border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 body{
 	font-family: 'Montserrat', sans-serif;
 }
 
-/*stacking views*/
+h2, h3 {
+	font-size: 1.5em;
+	margin-bottom: 1em;
+	position: relative;
+	padding-bottom: 0.5em;
+
+	span {
+		font-weight: bold;
+		color: rgba(0,0,0,0.4);
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 4em;
+		height: 0.2em;
+		background-color: rgba(0,0,0,0.1);
+		border-radius: 0.1em;
+	}
+}
+
+
 .app{
 	max-width: 30em;
 	margin:auto;
@@ -21,15 +46,9 @@ body{
 
 .view{
 	min-height: 100vh;
-	// display: none !important;
 }
 
-// .active{
-// 	display: flex !important;
-// }
 
-
-/*layout in each view*/
 .view{
 	display: flex;
 	flex-direction:column;
@@ -39,41 +58,97 @@ body{
 .header{
 	text-align: right;
 	padding:1em;
+
+	i {
+		border-radius: 50%;
+		margin-left: 0.5em;
+		width: 2.5em;
+		height: 2.5em;
+		text-align: center;
+		line-height: 2.5;
+		background-color: rgba(0,0,0,0.4);
+		box-shadow: 0 0.2em 0.2em rgba(0,0,0,0.1);
+		color: #fff;
+	}
 }
 
 .main{
 	flex: 1 0 auto;
-	padding:1em;
+	padding: 0 1em 1em 1em;
 }
 
-/*nav*/
 
 .menu a{
 	display: block;
+	text-align: center;
 	padding:1em;
-	border-bottom:thin #ccc dotted;
+	border-bottom: 0.1em rgba(0,0,0,0.1) solid;
 	color:black;
+	text-transform: capitalize;
 }
 
-/*header */
-.header i{
-	margin-left:1em;
-}
-
-/*projects*/
 .project{
 	margin-bottom: 1em;
+	box-shadow: 0 0.8em 0.8em -0.5em rgba(0,0,0,0.1);
+	padding: 0.5em 0.5em 0 0.5em;
+	
+	i{
+	  margin-right: 0.5em;
+	  background-color: rgba(0,0,0,0.4);
+	  color: #fff;
+	  width: 2.2em;
+	  line-height: 2.2;
+	  border-radius: 50%;
+	  text-align: center;
+	  box-shadow: 0 0.2em 0.2em rgba(0,0,0,0.1);
+	}
+
+	p:not(.card-text) {
+		margin: 0;
+	}
 }
 
-.project i{
-  margin-right:1em;
+.card-body {
+	padding: 1em 0.5em;
 }
 
-/* Color Theme Swatches in RGBA */
-.color0{ background-color: rgba(200, 200, 200, 1); }
-.color1{ background-color: rgba(201, 255, 245, 1); }
-.color2{ background-color: rgba(183, 232, 209, 1); }
-.color3{ background-color: rgba(214, 255, 224, 1); }
-.color4{ background-color: rgba(185, 232, 183, 1); }
-.color5{ background-color: rgba(222, 255, 201, 1); }
+.color-1 {
+	background-image: linear-gradient(rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 100%);
+}
+
+.btn-color {
+	background-color: rgba(0,0,0,0.4);
+	box-shadow: 0 0.2em 0.2em rgba(0,0,0,0.1);
+	color: #fff;
+}
+
+.btn {
+	&:focus {
+		box-shadow: none;
+	}
+}
+
+form {
+	.form-group {
+		input, select {
+			background-color: transparent;
+			border: none;
+			border-bottom: 0.1em rgba(0,0,0,0.1) solid;
+			padding: 0;
+			border-radius: 0;
+		}
+
+		label {
+			font-weight: bold;
+			margin: 0;
+			color: rgba(0,0,0,0.4);
+		}
+	}
+}
+
+.form-control:focus {
+    background-color: transparent;
+    outline: 0;
+	box-shadow: none;
+}
 

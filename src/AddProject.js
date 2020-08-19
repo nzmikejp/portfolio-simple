@@ -78,7 +78,7 @@ class AddProject extends Component {
 
               </div>
 
-              <button type="submit" className="btn btn-primary" onClick={this.handleAddClick}>Add</button>
+              <button type="submit" className="btn btn-color" onClick={this.handleAddClick}>Add</button>
             </form>
         )
     }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import View from './View'
 import Project from './Project'
 import AddProject from './AddProject'
+import UpdatingProject from './UpdatingProject'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/css/style.css'
 
@@ -60,12 +61,13 @@ class App extends Component {
     })
   }
 
+
   render() {
 
     return (
       <div className="app">
 
-        <View viewName="home" activeView={this.state.activeView} className="color1">
+        <View viewName="home" activeView={this.state.activeView} className="color-1">
             <div className="header">
               <i className="fas fa-plus" onClick={() => this.setActiveView('add-project')}></i>
               <i className="fas fa-bars" onClick={() => this.setActiveView('nav')}></i>
@@ -89,27 +91,29 @@ class App extends Component {
             </div>
         </View>
 
-        <View  viewName="add-project" activeView={this.state.activeView} className="color2">
+        <View  viewName="add-project" activeView={this.state.activeView} className="color-1">
           <div className="header"><i className="fas fa-times" onClick={()=>this.setActiveView('home')}></i></div>
           <div className="main">
-            <h3>Add a project</h3>
+            <h3><span>Add</span> Projects</h3>
             <AddProject addProject={this.addProject} setActiveView={this.setActiveView}/>
           </div>
         </View>
 
-        <View viewName="update-project" activeView={this.state.activeView} className="color3">
+        <View viewName="update-project" activeView={this.state.activeView} className="color-1">
           <div className="header"><i className="fas fa-times" onClick={()=>this.setActiveView('home')}></i></div>
           <div className="main">
-            <h2>Update Projects</h2>
+            <h2><span>Update</span> Projects</h2>
+            <UpdatingProject/>
           </div>
         </View>
 
-        <View viewName="nav" activeView={this.state.activeView} className="color0">
+        <View viewName="nav" activeView={this.state.activeView} className="color-1">
           <div className="header"><i className="fas fa-times" onClick={()=>this.setActiveView('home')}></i></div>
           <div className="main">
             <ul className="menu">
-              <li><a className="color1" href="#" onClick={() => this.setActiveView('home')}>Projects</a></li>
-              <li><a className="color2" href="#" onClick={() => this.setActiveView('add-project')}>Add a project</a></li>
+              <li><a className="" href="#" onClick={() => this.setActiveView('home')}>Projects</a></li>
+              <li><a className="" href="#" onClick={() => this.setActiveView('add-project')}>Add a project</a></li>
+              <li><a className="" href="#" onClick={() => this.setActiveView('update-project')}>Update a project</a></li>
             </ul>
           </div>
         </View>

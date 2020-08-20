@@ -3,11 +3,18 @@ import React, { Component } from 'react'
 class Project extends Component{
 
     handleUpdateClick = () => {
-        this.props.setActiveView('update-project')
+        var {setActiveView, setProjectToUpdate, id} = this.props
+        setActiveView('update-project')
+        setProjectToUpdate(id)
+    }
+
+    handleDeleteClick = () => {
+        var {id, deleteProject} = this.props
+        deleteProject(id)  
     }
 
     render(){
-        var {name, description} = this.props
+        var {name, description,} = this.props
 
         return(
             <div className="card project">
@@ -18,7 +25,7 @@ class Project extends Component{
                     <p>
                         <i className="fas fa-heart"></i>
                         <i className="fas fa-edit" onClick={this.handleUpdateClick}></i>
-                        <i className="fas fa-trash"></i>
+                        <i className="fas fa-trash" onClick={this.handleDeleteClick}></i>
                     </p>
                 </div>
             </div>

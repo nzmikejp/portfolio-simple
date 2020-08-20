@@ -1,14 +1,6 @@
 import React, { Component } from 'react'
 
 class AddProject extends Component {
-    constructor(props){
-        super(props)
-
-        this.state = {
-           
-        }
-
-    }
 
     handleFormSubmit = (e) => {
         e.preventDefault()

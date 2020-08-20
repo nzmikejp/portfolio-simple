@@ -161,7 +161,7 @@ h2, h3 {
 }
 
 .btn {
-	transition: ease 0.3s transform;
+	transition: ease 0.3s all;
 	
 	&:focus {
 		box-shadow: none;

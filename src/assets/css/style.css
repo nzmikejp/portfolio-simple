@@ -168,8 +168,8 @@ h2:after, h3:after {
 }
 
 .btn {
-  -webkit-transition: ease 0.3s transform;
-  transition: ease 0.3s transform;
+  -webkit-transition: ease 0.3s all;
+  transition: ease 0.3s all;
 }
 
 .btn:focus {

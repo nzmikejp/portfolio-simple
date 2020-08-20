@@ -30,7 +30,8 @@ class App extends Component {
           image: './images/project.jpg',
           type_id: 1
         },
-      ]
+      ],
+      projectToUpdate: {}
     }
   }
 
@@ -40,6 +41,14 @@ class App extends Component {
     })
   }
 
+  setProjectToUpdate = (id) => {
+    var foundProject = this.state.projects.find((project) => {
+      return project.id === id
+    })
+    this.setState({projectToUpdate:foundProject})
+  }
+
+
   getProjects = () => {
     axios.get(urlPrefix+'/projects')
     .then(res => {
@@ -48,7 +57,6 @@ class App extends Component {
   }
 
   addProject = (data) => {
-    
     axios.post(urlPrefix+'/projects',data)
     .then(res => {
       this.getProjects()
@@ -58,7 +66,6 @@ class App extends Component {
   deleteProject = (id) => {
     axios.delete(urlPrefix+'/projects/'+id)
     .then(res => {
- 
       this.getProjects();
     })
   }
@@ -69,7 +76,6 @@ class App extends Component {
       this.getProjects()
     })
   }
-
 
   componentDidMount(){
     this.getProjects()
@@ -93,6 +99,8 @@ class App extends Component {
                   var props = {
                     key: project.id,
                     setActiveView: this.setActiveView,
+                    deleteProject: this.deleteProject,
+                    setProjectToUpdate: this.setProjectToUpdate,
                     ...project
                   }
 
@@ -116,7 +124,7 @@ class App extends Component {
           <div className="header"><i className="fas fa-times" onClick={()=>this.setActiveView('home')}></i></div>
           <div className="main">
             <h2><span>Update</span> Projects</h2>
-            <UpdatingProject/>
+            <UpdatingProject {...this.state.projectToUpdate} updateProject={this.updateProject} setActiveView={this.setActiveView}/>
           </div>
         </View>
 
@@ -126,7 +134,6 @@ class App extends Component {
             <ul className="menu">
               <li><a className="" href="#" onClick={() => this.setActiveView('home')}>Projects</a></li>
               <li><a className="" href="#" onClick={() => this.setActiveView('add-project')}>Add a project</a></li>
-              <li><a className="" href="#" onClick={() => this.setActiveView('update-project')}>Update a project</a></li>
             </ul>
           </div>
         </View>

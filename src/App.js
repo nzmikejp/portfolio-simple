@@ -116,7 +116,17 @@ class App extends Component {
           <div className="header"><i className="fas fa-times" onClick={()=>this.setActiveView('home')}></i></div>
           <div className="main">
             <h3><span>Add</span> Projects</h3>
-            <AddProject addProject={this.addProject} setActiveView={this.setActiveView}/>
+            {
+              (() => {
+                var props = {
+                  addProject: this.addProject,
+                  setActiveView: this.setActiveView
+                }
+                return (
+                  <AddProject {...props}/>
+                )
+              })() //this is called a self invoking function which will run by itself.
+            }
           </div>
         </View>
 
